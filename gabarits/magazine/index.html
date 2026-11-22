@@ -1,5 +1,6 @@
 <!doctype html>
-<html lang="fr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><title>Gabarit Magazine · exemple</title>
+<html lang="fr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Gabarit Magazine v2 · exemple</title>
 <style>
 /* KIT ARTEFACT « TOKN » — le nouveau Tokn (forme v06 Graphite, choisie par Damien le 22/11/2026), appliqué aux artefacts.
    CHARTE v0 PROVISOIRE (22/11/2026) : se fige (lecture seule + empreinte) quand Damien a répondu aux questions de cadrage.
@@ -171,48 +172,96 @@ body.g-magazine .grille>*{background:none;border:0;border-top:1px solid var(--bo
 body.g-magazine .grille>*:hover{border-color:var(--bord-fort)}
 body.g-magazine .puce{font-size:clamp(18px,1.6vw,24px);padding:16px 26px;border-radius:var(--r-pilule)}
 body.g-magazine .lis-nav{position:fixed;right:clamp(16px,2vw,32px);align-items:flex-end;text-align:right;top:50%;transform:translateY(-50%);z-index:40;flex-direction:column;flex-wrap:nowrap;gap:2px;background:none;border:0;padding:0;margin:0;display:none}
-@media(min-width:1500px){body.g-magazine .lis-nav{display:flex}}
 body.g-magazine .lis-nav a{font-size:12px;padding:5px 0;background:none!important;color:var(--texte-3);border-radius:0}
 body.g-magazine .lis-nav a.on{color:var(--texte)}
 @media(max-width:900px){body.g-magazine section{grid-template-columns:1fr}body.g-magazine section::before{grid-column:1;grid-row:auto;position:static;font-size:72px;margin-bottom:12px}body.g-magazine section>*{grid-column:1}}
+
+/* ---- Magazine v2 (22/11) : couvertures et moments qui font lire jusqu'au bout. Photos : jamais en boîte, jamais floutées ; texte sur photo = voile dégradé plein. ---- */
+body.g-magazine .hero.photo{position:relative;isolation:isolate}
+body.g-magazine .hero.photo::before{content:"";position:absolute;inset:0;z-index:-2;background:var(--img) center/cover no-repeat}
+body.g-magazine .hero.photo::after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,rgba(18,19,22,.6) 0,rgba(18,19,22,.08) 38%,rgba(18,19,22,.88) 100%)}
+body.g-magazine section.plein-cadre{position:relative;isolation:isolate;display:flex;flex-direction:column;justify-content:flex-end;min-height:min(90svh,840px);counter-increment:none;border-bottom:0}
+body.g-magazine section.plein-cadre::before{content:"";position:absolute;inset:0;height:100%;align-self:stretch;z-index:-2;grid-column:auto;grid-row:auto;font-size:0;-webkit-text-stroke:0;background:var(--img) center/cover no-repeat}
+body.g-magazine section.plein-cadre::after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,rgba(18,19,22,.35) 0,rgba(18,19,22,.1) 40%,rgba(18,19,22,.85) 100%)}
+body.g-magazine section.plein-cadre>*{grid-column:auto}
+body.g-magazine .citation{font-family:var(--large);font-weight:600;font-size:clamp(30px,5.4vw,84px);line-height:1.03;letter-spacing:-.035em;max-width:17ch;margin:0;color:#fff}
+body.g-magazine .duo{display:grid;grid-template-columns:1fr 1fr;gap:clamp(24px,4vw,64px);align-items:center}
+body.g-magazine .duo figure{aspect-ratio:4/5;overflow:hidden;border-radius:var(--r-l);margin:0}
+body.g-magazine .duo figure img,body.g-magazine .versus figure img{width:100%;height:100%;object-fit:cover;border-radius:0;display:block}
+body.g-magazine .versus{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:0 0 32px}
+body.g-magazine .versus figure{position:relative;aspect-ratio:4/3;overflow:hidden;border-radius:var(--r-l);margin:0}
+body.g-magazine figcaption{position:absolute;left:12px;bottom:12px;background:rgba(18,19,22,.92);color:var(--texte);font:600 12px var(--police-mono);letter-spacing:.08em;text-transform:uppercase;padding:6px 12px;border-radius:999px}
+body.g-magazine details.reveler{margin-top:28px}
+body.g-magazine details.reveler summary{display:inline-block;cursor:pointer;list-style:none;padding:14px 26px;border-radius:999px;background:var(--accent);color:#fff;font:600 1rem var(--police);-webkit-tap-highlight-color:transparent}
+body.g-magazine details.reveler summary::-webkit-details-marker{display:none}
+body.g-magazine details.reveler[open] summary{background:var(--surf-2);color:var(--texte-2)}
+body.g-magazine details.reveler>div{margin-top:20px;font-size:clamp(18px,1.7vw,24px);line-height:1.45;max-width:36ch;color:var(--texte)}
+body.g-magazine .teaser{margin-top:56px;display:flex;align-items:center;gap:16px;font:600 12px var(--police-mono);letter-spacing:.09em;text-transform:uppercase;color:var(--texte-3);text-decoration:none}
+body.g-magazine .teaser::before{content:"";height:1px;width:48px;background:var(--bord-fort)}
+body.g-magazine .credits{padding:32px clamp(24px,4vw,56px) 56px;font-size:13px;color:var(--texte-3);line-height:1.7;max-width:none}
+body.g-magazine .credits a{color:var(--texte-3)}
+html.js body.g-magazine .rv{opacity:0;transform:translateY(20px);transition:opacity .7s ease,transform .7s ease}
+html.js body.g-magazine .rv.vu{opacity:1;transform:none}
+@media(max-width:900px){body.g-magazine .duo,body.g-magazine .versus{grid-template-columns:1fr}body.g-magazine .duo figure{aspect-ratio:4/3}}
+@media(prefers-reduced-motion:reduce){html.js body.g-magazine .rv{opacity:1;transform:none;transition:none}}
 
 </style></head>
 <body class="tokn g-magazine">
 <div class="lis-progres" aria-hidden="true"></div>
 <!--gabarit:magazine-->
 <main>
-<header class="hero">
-  <div class="meta"><span class="etiquette">Gabarit Magazine · contenu d'exemple</span><span class="etiquette">Guide n° 01</span></div>
-  <div><h1>Le sac<br>de voyage</h1><p>Comment choisir un sac pour dix jours sans rien regretter à l'aéroport.</p></div>
+<header class="hero photo" style="--img:url(img/cover.jpg)">
+  <div class="meta"><span class="etiquette">Exemple · 3 min de lecture</span><span class="etiquette">Guide n° 01</span></div>
+  <div><h1>10 jours,<br>1 sac,<br>zéro regret</h1><p>Le test qui te dit en 3 minutes si ton sac est le bon, avant d'arriver à l'aéroport.</p></div>
 </header>
-<section>
+<section id="volume">
   <span class="etiquette">Le volume</span>
   <div class="chiffre"><span class="gros">40 L</span><p><b>Dix jours</b> tiennent dans quarante litres, à une condition : t'interdire le « au cas où ».</p></div>
-  <p class="franc">Un sac plein se porte une heure. Un sac trop grand se remplit tout seul.</p>
+  <a class="teaser" href="#poids">Suite : ce qu'un sac plein pèse vraiment</a>
 </section>
-<section>
+<section class="plein-cadre" style="--img:url(img/rando.jpg)">
+  <span class="etiquette">À retenir</span>
+  <p class="citation">Un sac plein se porte une heure. Un sac trop grand se remplit tout seul.</p>
+</section>
+<section id="poids">
   <span class="etiquette">Le poids</span>
   <h2>Trois sacs, trois poids</h2>
   <table><tr><th>Sac</th><th>Vide</th><th>Plein</th></tr>
   <tr><td>Cabine</td><td>1,1 kg</td><td>8 kg</td></tr>
   <tr><td>Sac à dos 40 L</td><td>1,4 kg</td><td>11 kg</td></tr>
   <tr><td>Valise rigide</td><td>3,2 kg</td><td>18 kg</td></tr></table>
+  <a class="teaser" href="#methode">Suite : le même sac, deux moments</a>
 </section>
-<section>
+<section id="methode">
+  <span class="etiquette">La méthode</span>
+  <h2>Même sac. Deux moments.</h2>
+  <div class="versus">
+    <figure><img src="img/aeroport.jpg" alt="Hall de départs d'un aéroport" loading="lazy"><figcaption>Jour 1 · l'aéroport</figcaption></figure>
+    <figure><img src="img/sentier.jpg" alt="Randonneur avec son sac en montagne" loading="lazy"><figcaption>Jour 6 · le sentier</figcaption></figure>
+  </div>
+  <details class="reveler"><summary>Qu'est-ce qui change entre les deux ?</summary><div>Rien dans le sac. Seulement ta façon de le porter : au jour 1 il te paraît léger, au jour 6 chaque kilo se compte.</div></details>
+  <a class="teaser" href="#erreurs">Suite : les trois erreurs qu'on refait</a>
+</section>
+<section id="erreurs">
   <span class="etiquette">Les erreurs</span>
   <h2>Ce qu'on regrette toujours</h2>
-  <div class="grille">
-    <div class="spec"><span class="num">01</span><h3>Trop de chaussures</h3><p>Deux paires suffisent : celle qui marche, celle qui se montre.</p></div>
-    <div class="spec"><span class="num">02</span><h3>Pas de poche accessible</h3><p>Passeport et chargeur doivent se prendre sans tout ouvrir.</p></div>
-    <div class="spec"><span class="num">03</span><h3>Le sac neuf le jour J</h3><p>Un sac se règle avant, pas dans la file d'embarquement.</p></div>
+  <div class="duo">
+    <figure><img src="img/valise.jpg" alt="Valise ouverte en cours de préparation" loading="lazy"></figure>
+    <div>
+      <div class="spec"><span class="num">01</span><h3>Trop de chaussures</h3><p>Deux paires suffisent : celle qui marche, celle qui se montre.</p></div>
+      <div class="spec"><span class="num">02</span><h3>Pas de poche accessible</h3><p>Passeport et chargeur doivent se prendre sans tout ouvrir.</p></div>
+      <div class="spec"><span class="num">03</span><h3>Le sac neuf le jour J</h3><p>Un sac se règle avant, pas dans la file d'embarquement.</p></div>
+    </div>
   </div>
+  <a class="teaser" href="#test">Suite : à toi de jouer</a>
 </section>
-<section>
+<section id="test">
   <span class="etiquette">Le test</span>
   <h2>Quelle est la bonne règle ?</h2>
   <div class="puces" id="ch"><button class="puce">Tout emporter au cas où</button><button class="puce">Deux paires, un seul sac</button><button class="puce">Un sac neuf le jour du départ</button></div>
   <p class="bilan" id="bi"></p>
 </section>
+<p class="credits">Contenu d'exemple. Photos libres de droits :<br>Clothes-travel-voyage-backpack (24324553095).jpg — www.Pixel.la Free Stock Photos — CC0 (Wikimedia Commons)<br>Mountain hiker (Unsplash).jpg — Sujitkun Khantayana parkkun — CC0 (Wikimedia Commons)<br>Packing for a business trip (Unsplash).jpg — Angelina Litvin linalitvina — CC0 (Wikimedia Commons)<br>Vilnius airport departures hall.jpg — Sdkb — CC BY-SA 4.0 (Wikimedia Commons)<br>Hiker in the Mountains (48920132448).jpg — GlacierNPS — Public domain (Wikimedia Commons)</p>
 </main>
 <script>
 document.querySelectorAll('#ch .puce').forEach(function(b,i){b.onclick=function(){document.querySelectorAll('#ch .puce').forEach(function(x){x.classList.remove('on');x.classList.add('faux')});b.classList.remove('faux');b.classList.add('on');document.getElementById('bi').innerHTML=i===1?'<b>Oui.</b> Moins, mais bien choisi.':'Non : relis les erreurs plus haut.'}});
@@ -233,5 +282,16 @@ function maj(){const y=window.scrollY+120;let k=0;tops.forEach((t,i)=>{if(t<=y)k
 if(pb)pb.style.width=(100*window.scrollY/H)+'%'}
 let raf=0;addEventListener('scroll',()=>{if(!raf)raf=requestAnimationFrame(()=>{raf=0;maj()})},{passive:true});
 addEventListener('resize',()=>{mesure();maj()});addEventListener('load',()=>{mesure();maj()});mesure();maj();})();
+</script>
+<script>
+/* Magazine : (1) les blocs apparaissent UNE fois en entrant à l'écran ; (2) un chiffre énorme se compte jusqu'à sa valeur UNE fois. Mouvement = « regarde ici ». Aucun flou. Sans JS ou en mouvement réduit : tout est déjà là. */
+(function(){var d=document.documentElement,mr=matchMedia('(prefers-reduced-motion:reduce)').matches;if(!('IntersectionObserver' in window)||mr)return;d.classList.add('js');
+var els=[].slice.call(document.querySelectorAll('body.g-magazine section>*:not(.etiquette):not(.credits),body.g-magazine .hero>*'));
+var io=new IntersectionObserver(function(es){es.forEach(function(e){if(!e.isIntersecting)return;e.target.classList.add('vu');io.unobserve(e.target);
+ var g=e.target.querySelector&&(e.target.classList.contains('gros')?e.target:e.target.querySelector('.gros'));if(g)compte(g)})},{threshold:.15});
+els.forEach(function(e){e.classList.add('rv');io.observe(e)});
+function compte(g){if(g.dataset.fait)return;g.dataset.fait=1;var m=g.textContent.match(/^(\d+(?:[.,]\d+)?)(.*)$/);if(!m)return;var cible=parseFloat(m[1].replace(',','.')),dec=(m[1].split(/[.,]/)[1]||'').length,t0=null,fin=m[2];
+ function pas(t){if(!t0)t0=t;var k=Math.min(1,(t-t0)/900),v=cible*(1-Math.pow(1-k,3));g.textContent=v.toFixed(dec).replace('.',',')+fin;if(k<1)requestAnimationFrame(pas)}requestAnimationFrame(pas)}})();
+
 </script>
 </body></html>
