@@ -281,7 +281,7 @@ function tousMontre(){while(!fin()){var n=next++;(turns[n]||[]).forEach(function
 btn.onclick=avance;tout.onclick=function(){if(!busy)tousMontre()};
 addEventListener('keydown',function(e){if(e.key==='ArrowRight'||e.key==='Enter'||e.key===' '){if(e.target.tagName==='BUTTON')return;e.preventDefault();avance()}});
 fil.querySelectorAll('.reponses').forEach(function(r){r.querySelectorAll('button').forEach(function(b,i){b.onclick=function(){if(r.dataset.fait)return;r.dataset.fait=1;var q=document.createElement('div');q.className='m toi neuf';q.textContent=b.textContent;r.parentNode.insertBefore(q,r.nextSibling);r.style.display='none';var ty=document.createElement('div');ty.className='typing neuf';ty.innerHTML='<i></i><i></i><i></i>';q.parentNode.insertBefore(ty,q.nextSibling);bas();setTimeout(function(){ty.remove();var a=document.createElement('div');a.className='m g neuf';a.innerHTML='<p>'+(i===+r.dataset.ok?'<b>'+r.dataset.oktxt+'</b>':r.dataset.kotxt)+'</p>';q.parentNode.insertBefore(a,q.nextSibling);bas()},mr?0:700)}})});
-var et=new URLSearchParams(location.search).get('etat');if(et!==null){var m=+et;for(var z=0;z<m&&!fin();z++){var n=next++;(turns[n]||[]).forEach(function(e){montre(e,false)})}label()}else{label()}
+var et=new URLSearchParams(location.search).get('etat');if(et!==null){var m=+et;for(var z=0;z<m&&!fin();z++){var n=next++;(turns[n]||[]).forEach(function(e){montre(e,false)})}label()}else{(turns[0]||[]).forEach(function(e){montre(e,false)});next=1;label()}
 })();
 
 </script>
