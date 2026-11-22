@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="fr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><title>Gabarit Bento · exemple</title>
+<style>
+/*KIT*/
+</style></head>
+<body>
+<!--gabarit:bento-->
+<main>
+<header class="hero">
+  <div><span class="etiquette">Gabarit Bento · contenu d'exemple</span><h1>Le sac de voyage</h1><p>Tout tient sur un écran : le volume, le poids, les erreurs et le test.</p></div>
+  <span class="orbe"></span>
+</header>
+<div class="bento">
+  <div class="t plein s5 h2"><span class="etiquette">Le volume</span><span class="gros">40 L</span><p>Dix jours, un seul sac, zéro « au cas où ».</p></div>
+  <div class="t s7"><span class="etiquette">Le poids</span>
+    <table><tr><th>Sac</th><th>Vide</th><th>Plein</th></tr><tr><td>Cabine</td><td>1,1 kg</td><td>8 kg</td></tr><tr><td>Sac à dos 40 L</td><td>1,4 kg</td><td>11 kg</td></tr><tr><td>Valise rigide</td><td>3,2 kg</td><td>18 kg</td></tr></table></div>
+  <div class="t s4"><span class="etiquette">Erreur 01</span><h3>Trop de chaussures</h3><p>Deux paires : celle qui marche, celle qui se montre.</p></div>
+  <div class="t s3"><span class="etiquette">Charge max</span><span class="gros">8 kg</span><div class="barre"><i style="width:62%"></i></div></div>
+  <div class="t s6"><span class="etiquette">Erreur 02</span><h3>Pas de poche accessible</h3><p>Passeport et chargeur se prennent sans tout ouvrir.</p></div>
+  <div class="t pour-toi s6"><span class="etiquette">À retenir</span><h3>Un sac plein se porte une heure. Un sac trop grand se remplit tout seul.</h3></div>
+  <div class="t s6"><span class="etiquette">Erreur 03</span><h3>Le sac neuf le jour J</h3><p>Un sac se règle avant, pas dans la file d'embarquement.</p></div>
+  <div class="t s12"><span class="etiquette">Le test</span><h3>Quelle est la bonne règle ?</h3>
+    <div class="puces" id="ch"><button class="puce">Tout emporter</button><button class="puce">Deux paires, un sac</button><button class="puce">Un sac neuf le jour J</button></div><p class="bilan" id="bi"></p></div>
+</div>
+</main>
+<script>
+document.querySelectorAll('#ch .puce').forEach(function(b,i){b.onclick=function(){document.querySelectorAll('#ch .puce').forEach(function(x){x.classList.remove('on');x.classList.add('faux')});b.classList.remove('faux');b.classList.add('on');document.getElementById('bi').innerHTML=i===1?'<b>Oui.</b> Moins, mais bien choisi.':'Non : relis les erreurs.'}});
+</script>
+</body></html>

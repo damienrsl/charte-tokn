@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="fr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><title>Gabarit Magazine · exemple</title>
+<style>
+/*KIT*/
+</style></head>
+<body>
+<!--gabarit:magazine-->
+<main>
+<header class="hero">
+  <div class="meta"><span class="etiquette">Gabarit Magazine · contenu d'exemple</span><span class="etiquette">Guide n° 01</span></div>
+  <div><h1>Le sac<br>de voyage</h1><p>Comment choisir un sac pour dix jours sans rien regretter à l'aéroport.</p></div>
+</header>
+<section>
+  <span class="etiquette">Le volume</span>
+  <div class="chiffre"><span class="gros">40 L</span><p><b>Dix jours</b> tiennent dans quarante litres, à une condition : t'interdire le « au cas où ».</p></div>
+  <p class="franc">Un sac plein se porte une heure. Un sac trop grand se remplit tout seul.</p>
+</section>
+<section>
+  <span class="etiquette">Le poids</span>
+  <h2>Trois sacs, trois poids</h2>
+  <table><tr><th>Sac</th><th>Vide</th><th>Plein</th></tr>
+  <tr><td>Cabine</td><td>1,1 kg</td><td>8 kg</td></tr>
+  <tr><td>Sac à dos 40 L</td><td>1,4 kg</td><td>11 kg</td></tr>
+  <tr><td>Valise rigide</td><td>3,2 kg</td><td>18 kg</td></tr></table>
+</section>
+<section>
+  <span class="etiquette">Les erreurs</span>
+  <h2>Ce qu'on regrette toujours</h2>
+  <div class="grille">
+    <div class="spec"><span class="num">01</span><h3>Trop de chaussures</h3><p>Deux paires suffisent : celle qui marche, celle qui se montre.</p></div>
+    <div class="spec"><span class="num">02</span><h3>Pas de poche accessible</h3><p>Passeport et chargeur doivent se prendre sans tout ouvrir.</p></div>
+    <div class="spec"><span class="num">03</span><h3>Le sac neuf le jour J</h3><p>Un sac se règle avant, pas dans la file d'embarquement.</p></div>
+  </div>
+</section>
+<section>
+  <span class="etiquette">Le test</span>
+  <h2>Quelle est la bonne règle ?</h2>
+  <div class="puces" id="ch"><button class="puce">Tout emporter au cas où</button><button class="puce">Deux paires, un seul sac</button><button class="puce">Un sac neuf le jour du départ</button></div>
+  <p class="bilan" id="bi"></p>
+</section>
+</main>
+<script>
+document.querySelectorAll('#ch .puce').forEach(function(b,i){b.onclick=function(){document.querySelectorAll('#ch .puce').forEach(function(x){x.classList.remove('on');x.classList.add('faux')});b.classList.remove('faux');b.classList.add('on');document.getElementById('bi').innerHTML=i===1?'<b>Oui.</b> Moins, mais bien choisi.':'Non : relis les erreurs plus haut.'}});
+</script>
+</body></html>

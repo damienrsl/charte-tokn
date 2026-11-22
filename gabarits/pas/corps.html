@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="fr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><title>Gabarit Pas à pas · exemple</title>
+<style>
+/*KIT*/
+</style></head>
+<body>
+<!--gabarit:pas-->
+<main>
+<header class="hero">
+  <span class="etiquette">Gabarit Pas à pas · contenu d'exemple</span>
+  <h1>Le sac de voyage</h1><p>Quatre écrans, une idée chacun. Fais défiler.</p>
+</header>
+<section><span class="etiquette">Étape 1 · Le volume</span>
+  <div class="chiffre"><span class="gros">40 L</span><p>Dix jours tiennent dans quarante litres.</p></div></section>
+<section><span class="etiquette">Étape 2 · Le poids</span>
+  <h2>Trois sacs, trois poids</h2>
+  <table><tr><th>Sac</th><th>Vide</th><th>Plein</th></tr><tr><td>Cabine</td><td>1,1 kg</td><td>8 kg</td></tr><tr><td>Sac à dos 40 L</td><td>1,4 kg</td><td>11 kg</td></tr><tr><td>Valise rigide</td><td>3,2 kg</td><td>18 kg</td></tr></table></section>
+<section><span class="etiquette">Étape 3 · À retenir</span>
+  <p class="franc">Un sac plein se porte une heure. Un sac trop grand se remplit tout seul.</p></section>
+<section><span class="etiquette">Étape 4 · Le test</span>
+  <h2>Quelle est la bonne règle ?</h2>
+  <div class="puces" id="ch"><button class="puce">Tout emporter</button><button class="puce">Deux paires, un sac</button><button class="puce">Un sac neuf le jour J</button></div>
+  <p class="bilan" id="bi"></p></section>
+</main>
+<script>
+document.querySelectorAll('#ch .puce').forEach(function(b,i){b.onclick=function(){document.querySelectorAll('#ch .puce').forEach(function(x){x.classList.remove('on');x.classList.add('faux')});b.classList.remove('faux');b.classList.add('on');document.getElementById('bi').innerHTML=i===1?'<b>Oui.</b> Moins, mais bien choisi.':'Non : relis l\'étape 3.'}});
+</script>
+</body></html>
