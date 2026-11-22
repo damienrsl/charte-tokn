@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Charte Tokn · artefacts (v0)</title>
+<style>
+/*KIT*/
+.sw{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin-top:14px}
+.sw div{border-radius:12px;border:1px solid var(--bord);padding:14px 14px 12px;min-height:88px;display:flex;flex-direction:column;justify-content:flex-end;font:600 12px var(--police-mono);letter-spacing:.04em}
+.sw small{font:500 11px var(--police-mono);opacity:.8;margin-top:2px}
+</style>
+</head>
+<body>
+<main>
+<header class="hero">
+  <div>
+    <span class="etiquette">Charte v0 · 22 novembre 2026</span>
+    <h1>Le nouveau Tokn, pour tous les artefacts</h1>
+    <p>Fond graphite, texte clair, un seul bleu : celui qui veut dire « c'est pour toi ». Rien ne bouge.</p>
+  </div>
+  <span class="orbe"></span>
+</header>
+
+<section>
+  <span class="etiquette">Couleurs</span>
+  <div class="verre carte">
+    <h2>Un graphite, un bleu</h2>
+    <p>Le bleu n'apparaît que sur ce que tu dois regarder ou faire. Partout ailleurs : des gris.</p>
+    <div class="sw">
+      <div style="background:#121316;color:#ededef">Fond<small>#121316</small></div>
+      <div style="background:#1d1f24;color:#ededef">Surface<small>#1d1f24</small></div>
+      <div style="background:#25272d;color:#ededef">Surface 2<small>#25272d</small></div>
+      <div style="background:#ededef;color:#121316">Plein<small>#ededef</small></div>
+      <div style="background:#4f7dff;color:#fff">Bleu « pour toi »<small>#4f7dff</small></div>
+      <div style="background:#6d7079;color:#fff">Orbe éteint<small>#6d7079</small></div>
+    </div>
+    <p class="franc"><b>Le bleu = c'est pour toi.</b> Une réponse à donner, un choix à faire, le point qui compte. S'il y en a partout, il ne veut plus rien dire.</p>
+  </div>
+</section>
+
+<section>
+  <span class="etiquette">Composants</span>
+  <div class="grille">
+    <div class="chiffre"><span class="gros">3 min</span><p><b>Un chiffre</b> reste collé à son libellé, en gros, en blanc.</p><div class="barre"><i style="width:62%"></i></div></div>
+    <div class="spec"><span class="num">01</span><h3>Une fiche</h3><p>Une idée = une carte. Texte à 18 px, ligne de 72 caractères au plus.</p></div>
+    <div class="modele"><small>Modèle</small>Un texte à copier ou à dire, sur une surface un cran plus claire.</div>
+  </div>
+  <div class="verre carte" style="margin-top:14px">
+    <h2>Un tableau</h2>
+    <table><tr><th>Poste</th><th>Avant</th><th>Après</th></tr>
+    <tr><td>Dictée</td><td>3 min</td><td>1 min</td></tr>
+    <tr><td>Relecture</td><td>2 min</td><td>30 s</td></tr></table>
+    <p class="dictee">Un passage dicté avec <mark>le mot à retenir</mark> et <s>le mot barré</s>.</p>
+  </div>
+</section>
+
+<section>
+  <span class="etiquette">Jeu</span>
+  <div class="verre carte">
+    <h2>Le bleu, c'est ton choix</h2>
+    <p>Touche une réponse : elle passe au bleu, les autres s'éteignent.</p>
+    <div class="puces" id="ch"><button class="puce">Un aplat de couleur</button><button class="puce">Un seul bleu</button><button class="puce">Des emojis</button></div>
+    <p class="bilan" id="bi"></p>
+    <button class="suite" id="su">Question suivante</button>
+    <div style="margin-top:18px"><a class="btn pour-toi" href="#">Bouton pour toi</a> <a class="btn" href="#">Bouton neutre</a></div>
+  </div>
+</section>
+<p class="pied">Charte provisoire : elle se fige quand Damien a répondu aux questions de cadrage.</p>
+</main>
+<script>
+document.querySelectorAll('#ch .puce').forEach(function(b,i){b.onclick=function(){
+ document.querySelectorAll('#ch .puce').forEach(function(x){x.classList.remove('on');x.classList.add('faux')});
+ b.classList.remove('faux');b.classList.add('on');
+ document.getElementById('bi').innerHTML=i===1?'<b>Oui.</b> Un seul bleu, réservé à ce qui est pour toi.':'Non : ni aplat, ni emoji. Essaie encore.';
+ document.getElementById('su').classList.add('vu')}});
+</script>
+</body>
+</html>
