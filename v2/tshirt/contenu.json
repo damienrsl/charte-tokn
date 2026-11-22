@@ -1,0 +1,206 @@
+{
+ "titre": "Ce que ton t-shirt te dit, si tu sais le lire",
+ "titre_court": "Ce que ton t-shirt te dit",
+ "chapo": "Quatre lignes cousues dans le col suffisent à savoir si un vêtement va durer. Voici comment les lire en deux minutes.",
+ "meta": "Guide · 4 min de lecture",
+ "img": "../img/",
+ "photo_une": {
+  "src": "etiquette.jpg",
+  "cap": "Une étiquette et ses symboles d'entretien"
+ },
+ "chapitres": [
+  {
+   "titre": "L'ordre compte",
+   "accroche": "Les fibres sont listées par ordre décroissant de poids.",
+   "paras": [
+    "La première ligne de l'étiquette, c'est la composition. Dans l'Union européenne, elle est obligatoire, et les fibres y sont listées par ordre décroissant de poids : <b>« 80 % coton, 20 % polyester »</b> veut dire que le coton domine.",
+    "Une fibre à quelques pour cent n'est pas là par hasard : l'élasthanne donne du stretch, le polyamide renforce les zones qui frottent. Ce que l'étiquette ne dit pas, c'est la qualité de la fibre : un coton court et un coton long s'écrivent pareil."
+   ],
+   "note": "L'origine (« Fabriqué en… ») n'est pas obligatoire sur un vêtement dans l'UE. Quand elle apparaît, elle désigne souvent la dernière grande étape de fabrication, pas le pays où la fibre a poussé.",
+   "photo": {
+    "src": "coton.jpg",
+    "cap": "Gros plan sur un tissu de coton"
+   }
+  },
+  {
+   "titre": "Quatre fibres, quatre compromis",
+   "paras": [
+    "Aucune fibre n'est « la bonne ». Chacune règle un problème et en crée un autre. Les mélanges existent pour compenser : un peu de polyester rend un coton plus solide, un peu d'élasthanne le fait revenir à sa forme.",
+    "Méfie-toi des noms qui font rêver. Un t-shirt vendu « bambou » est presque toujours en <b>viscose</b>, une cellulose transformée : en principe, c'est ce mot-là qui doit figurer sur l'étiquette."
+   ],
+   "cartes_col": "Fibre",
+   "cartes": [
+    {
+     "titre": "Coton",
+     "lignes": [
+      [
+       "Origine",
+       "Végétale"
+      ],
+      [
+       "Elle fait bien",
+       "Respire, doux sur la peau"
+      ],
+      [
+       "Son point faible",
+       "Sèche lentement"
+      ]
+     ],
+     "photo": {
+      "src": "coton.jpg",
+      "cap": "Gros plan sur un tissu de coton"
+     }
+    },
+    {
+     "titre": "Laine",
+     "lignes": [
+      [
+       "Origine",
+       "Animale"
+      ],
+      [
+       "Elle fait bien",
+       "Isole, même humide"
+      ],
+      [
+       "Son point faible",
+       "Peut feutrer au lavage"
+      ]
+     ],
+     "photo": {
+      "src": "laine.jpg",
+      "cap": "Fils de laine : la fibre qui isole même humide"
+     }
+    },
+    {
+     "titre": "Polyester",
+     "lignes": [
+      [
+       "Origine",
+       "Synthétique"
+      ],
+      [
+       "Elle fait bien",
+       "Sèche vite, résiste à l'usure"
+      ],
+      [
+       "Son point faible",
+       "Retient les odeurs"
+      ]
+     ]
+    },
+    {
+     "titre": "Viscose",
+     "lignes": [
+      [
+       "Origine",
+       "Cellulose transformée"
+      ],
+      [
+       "Elle fait bien",
+       "Tombe bien, douce"
+      ],
+      [
+       "Son point faible",
+       "Fragile quand elle est mouillée"
+      ]
+     ]
+    }
+   ],
+   "photo": {
+    "src": "usine.jpg",
+    "cap": "Une usine de tissage"
+   }
+  },
+  {
+   "titre": "Cinq symboles pour l'entretien",
+   "paras": [
+    "Presque tous les pays utilisent le même système : cinq formes, que tu retrouves sur chaque étiquette. Une croix par-dessus veut toujours dire « non »."
+   ],
+   "chiffre": {
+    "v": "5",
+    "t": "symboles suffisent à lire tout l'entretien d'un vêtement."
+   },
+   "liste": [
+    {
+     "icone": "bac",
+     "titre": "Le bac",
+     "texte": "Lavage. Le chiffre est la température maximale en °C ; une main, c'est à la main ; des barres dessous, un programme plus doux."
+    },
+    {
+     "icone": "triangle",
+     "titre": "Le triangle",
+     "texte": "Blanchiment. Barré : pas d'eau de Javel."
+    },
+    {
+     "icone": "carre",
+     "titre": "Le carré",
+     "texte": "Séchage. Un cercle dedans : sèche-linge ; les points indiquent la chaleur."
+    },
+    {
+     "icone": "fer",
+     "titre": "Le fer",
+     "texte": "Repassage. Un point : doux ; trois points : chaud."
+    },
+    {
+     "icone": "cercle",
+     "titre": "Le cercle",
+     "texte": "Nettoyage professionnel : réservé au pressing."
+    }
+   ]
+  },
+  {
+   "titre": "Le test des 30 secondes",
+   "accroche": "En magasin, tu n'as pas besoin d'un laboratoire. Quatre gestes suffisent.",
+   "paras": [
+    "En magasin, tu n'as pas besoin d'un laboratoire. Quatre gestes suffisent."
+   ],
+   "photo": {
+    "src": "portant.jpg",
+    "cap": "Un portant de friperie : l'endroit idéal pour s'entraîner à lire les étiquettes"
+   },
+   "etapes": [
+    {
+     "titre": "Lis la composition avant le prix.",
+     "texte": "Si la matière dominante ne te plaît pas, le reste n'a pas d'importance."
+    },
+    {
+     "titre": "Étire un coin du tissu.",
+     "texte": "Il doit revenir à sa forme. S'il reste mou, il se déformera dès les premiers lavages."
+    },
+    {
+     "titre": "Retourne le vêtement.",
+     "texte": "Coutures droites, fils coupés net, aucun pli qui tire."
+    },
+    {
+     "titre": "Regarde le bac.",
+     "texte": "Lavage à la main et pressing seulement ? Demande-toi si tu le feras vraiment."
+    }
+   ],
+   "citation": "Le meilleur vêtement est celui que tu es prêt à entretenir."
+  },
+  {
+   "titre": "À toi de jouer",
+   "quiz": {
+    "q": "Un pull est trempé par la pluie. Quelle fibre te garde le mieux au chaud ?",
+    "options": [
+     "Le coton",
+     "La laine",
+     "La viscose"
+    ],
+    "bonne": 1,
+    "ok": "La laine isole même humide : l'air reste piégé entre les fibres. Le coton mouillé refroidit, la viscose s'affaiblit.",
+    "ko": "Pas tout à fait. Relis les quatre fibres : laquelle isole même humide ?"
+   }
+  }
+ ],
+ "credits": [
+  "Label with care symbols.JPG — Elkagye — Public domain",
+  "Multicoloured Knitting Yarn 4ply.jpg — X201 — CC0",
+  "Blue Cotton Fabric Texture Free Creative Commons — Pink Sherbet Photography — CC BY 2.0",
+  "Clothing racks in second hand shop, Prague.jpg — MAKY.OREL — CC BY-SA 4.0",
+  "Spool of sewing thread made by Mölnlycke - SG1L1735.jpg — vonSmall — Public domain",
+  "Brown Wool Knit Cardigan Sweater of Charles Lindbergh - — Piqua Hosiery Co — Public domain",
+  "Woven fabric Factory.jpg — Bariston — CC BY-SA 4.0"
+ ]
+}

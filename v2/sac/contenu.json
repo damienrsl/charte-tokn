@@ -1,0 +1,121 @@
+{
+ "titre": "10 jours, 1 sac, zéro regret",
+ "titre_court": "1 sac, zéro regret",
+ "chapo": "Le test qui te dit en 3 minutes si ton sac est le bon, avant d'arriver à l'aéroport.",
+ "meta": "Exemple · 3 min de lecture",
+ "img": "../img/",
+ "photo_une": {
+  "src": "cover.jpg",
+  "cap": "Un sac, un appareil photo, des papiers : l'essentiel d'un départ"
+ },
+ "chapitres": [
+  {
+   "titre": "Le volume",
+   "accroche": "Dix jours tiennent dans quarante litres.",
+   "paras": [
+    "À une condition : t'interdire le « au cas où ». Un sac plein se porte une heure ; un sac trop grand se remplit tout seul.",
+    "Le volume se décide avant de poser quoi que ce soit sur le lit : choisis le sac d'abord, remplis-le ensuite, jamais l'inverse."
+   ],
+   "chiffre": {
+    "v": "40 L",
+    "t": "de quoi tenir dix jours si tu choisis ce qui entre."
+   },
+   "note": "Contenu d'exemple : les chiffres sont indicatifs."
+  },
+  {
+   "titre": "Le poids",
+   "paras": [
+    "Le poids à vide compte autant que le contenu : une valise rigide pèse déjà près de trois fois un sac cabine, avant d'avoir mis la moindre chaussette.",
+    "Retiens surtout l'écart entre vide et plein : c'est lui que ton dos sentira."
+   ],
+   "tableau": {
+    "cols": [
+     "Sac",
+     "Vide",
+     "Plein"
+    ],
+    "rows": [
+     [
+      "Cabine",
+      "1,1 kg",
+      "8 kg"
+     ],
+     [
+      "Sac à dos 40 L",
+      "1,4 kg",
+      "11 kg"
+     ],
+     [
+      "Valise rigide",
+      "3,2 kg",
+      "18 kg"
+     ]
+    ]
+   }
+  },
+  {
+   "titre": "Deux moments",
+   "paras": [
+    "Au jour 1, dans le hall de départs, ton sac te paraît léger. Au jour 6, sur le sentier, chaque kilo se compte.",
+    "C'est le même sac. Ce qui a changé, c'est le temps que tu passes à le porter."
+   ],
+   "versus": [
+    {
+     "src": "aeroport.jpg",
+     "cap": "Jour 1 · l'aéroport"
+    },
+    {
+     "src": "sentier.jpg",
+     "cap": "Jour 6 · le sentier"
+    }
+   ],
+   "citation": "Au jour 6, chaque kilo se compte."
+  },
+  {
+   "titre": "Les erreurs",
+   "accroche": "Trois erreurs qu'on refait à chaque départ.",
+   "paras": [
+    "Elles ont toutes la même cause : on prépare son sac comme pour le premier jour."
+   ],
+   "photo": {
+    "src": "valise.jpg",
+    "cap": "Une valise ouverte en cours de préparation"
+   },
+   "etapes": [
+    {
+     "titre": "Trop de chaussures",
+     "texte": "Deux paires suffisent : celle qui marche, celle qui se montre."
+    },
+    {
+     "titre": "Pas de poche accessible",
+     "texte": "Passeport et chargeur doivent se prendre sans tout ouvrir."
+    },
+    {
+     "titre": "Le sac neuf le jour J",
+     "texte": "Un sac se règle avant, pas dans la file d'embarquement."
+    }
+   ]
+  },
+  {
+   "titre": "Le test",
+   "quiz": {
+    "q": "Quelle est la bonne règle ?",
+    "options": [
+     "Tout emporter au cas où",
+     "Deux paires, un seul sac",
+     "Un sac neuf le jour du départ"
+    ],
+    "bonne": 1,
+    "ok": "Moins, mais bien choisi.",
+    "ko": "Non : relis les erreurs plus haut."
+   }
+  }
+ ],
+ "credits": [
+  "Clothes-travel-voyage-backpack — www.Pixel.la Free Stock Photos — CC0",
+  "Mountain hiker (Unsplash) — Sujitkun Khantayana parkkun — CC0",
+  "Packing for a business trip (Unsplash) — Angelina Litvin — CC0",
+  "Vilnius airport departures hall — Sdkb — CC BY-SA 4.0",
+  "Hiker in the Mountains — GlacierNPS — Public domain"
+ ]
+}

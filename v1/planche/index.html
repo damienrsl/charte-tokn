@@ -30,14 +30,14 @@
 html{font-size:18px;background:var(--fond)}
 body.tokn{margin:0;background:var(--fond);color:var(--texte);font-family:var(--police);font-size:1rem;line-height:1.6;-webkit-font-smoothing:antialiased}
 /* grain FIXE, peint une fois, jamais animé */
-body.tokn::before{content:"";position:fixed;inset:0;z-index:0;pointer-events:none;background-image:var(--bruit-doux);background-size:160px 160px;opacity:.3}
+body.tokn::before{content:"";position:fixed;inset:0;z-index:1;pointer-events:none;background-image:var(--bruit);background-size:160px 160px;opacity:var(--grain,.12)}
 body.tokn ::selection{background:rgba(79,125,255,.35)}
 body.tokn .auras{display:none!important}
 body.tokn h1,body.tokn h2,body.tokn h3{font-family:var(--police);font-weight:600;color:var(--texte)}
 body.tokn h1{font-family:var(--large)}
 body.tokn b,body.tokn strong{font-weight:600;color:var(--texte)}
 body.tokn a{color:var(--accent-texte)}
-body.tokn main{position:relative;z-index:1;max-width:1280px;padding:0 clamp(20px,5vw,72px) 80px;margin:0 auto}
+body.tokn main{position:relative;z-index:2;max-width:1280px;padding:0 clamp(20px,5vw,72px) 80px;margin:0 auto}
 
 /* --- hero --- */
 body.tokn .hero{padding:clamp(40px,6vw,80px) 0 30px;display:grid;grid-template-columns:1fr;gap:16px 48px;align-items:start;position:relative}
@@ -149,6 +149,22 @@ body.tokn .lis-nav a.on{color:var(--plein-t);background:var(--plein)}
 @media(max-width:700px){body.tokn .lis-nav{overflow-x:auto;flex-wrap:nowrap;scrollbar-width:none;border-radius:20px}body.tokn .lis-nav::-webkit-scrollbar{display:none}}
 @media(prefers-reduced-motion:reduce){body.tokn *{transition:none!important;animation:none!important}}
 
+/* --- FOND VIVANT (22/11, retour : « il se passe rien, pas d'orbe bleu qui bouge, pas de grain ») ---
+   3 orbes cœur noir → bleus qui dérivent TRÈS lentement (transform seul, rastérisé une fois, jamais de flou/scale/blend), grain par-dessus (visible),
+   contenu au-dessus. Garde-fous : bouton « Fond fixe », pause après 3 min d'inactivité ou onglet caché, aucune animation en mouvement réduit. */
+body.tokn .orbes{position:fixed;inset:0;z-index:0;pointer-events:none;overflow:hidden;contain:strict}
+body.tokn .orbes i{position:absolute;display:block;border-radius:50%;width:var(--d);height:var(--d);left:var(--x);top:var(--y);opacity:var(--o,.78);will-change:transform;
+ background:radial-gradient(circle closest-side,#000 0 13%,#040c3d 28%,#0a2290 48%,rgba(40,95,255,.55) 62%,rgba(79,125,255,.18) 75%,rgba(79,125,255,0) 86%);
+ animation:orbe var(--t,52s) ease-in-out infinite alternate;animation-delay:var(--dl,0s)}
+body.tokn .orbes i:nth-child(1){--d:min(120vmax,1500px);--x:38vw;--y:-34vh;--t:56s;--dl:-14s;--ax:-9vw;--ay:5vh;--bx:5vw;--by:-4vh}
+body.tokn .orbes i:nth-child(2){--d:min(95vmax,1150px);--x:-28vw;--y:38vh;--t:68s;--dl:-31s;--ax:4vw;--ay:-6vh;--bx:-7vw;--by:5vh}
+body.tokn .orbes i:nth-child(3){--d:min(80vmax,950px);--x:62vw;--y:52vh;--t:47s;--dl:-8s;--ax:-6vw;--ay:-5vh;--bx:5vw;--by:6vh}
+@keyframes orbe{from{transform:translate3d(var(--ax),var(--ay),0)}to{transform:translate3d(var(--bx),var(--by),0)}}
+body.tokn.fond-fixe .orbes i,body.tokn.fond-pause .orbes i{animation-play-state:paused}
+body.tokn .fond-bouton{position:fixed;right:12px;bottom:12px;z-index:60;background:var(--surf);color:var(--texte-3);border:1px solid var(--bord);border-radius:999px;padding:7px 13px;font:600 11px var(--police-mono);letter-spacing:.08em;text-transform:uppercase;cursor:pointer;opacity:.75}
+body.tokn .fond-bouton:hover{opacity:1;color:var(--texte)}
+@media(prefers-reduced-motion:reduce){body.tokn .orbes i{animation:none}}
+
 /* GABARIT « Planche » (v1-C) : collage éditorial asymétrique sur 12 colonnes. Rythme : très gros / petit, photo / pas de photo, surface / plein / bleu. Chaque bloc est placé à la main (grid-column). Rail horizontal pour les cartes. Aucune animation. */
 body.g-planche main{max-width:1500px;padding:clamp(20px,3vw,40px) clamp(14px,2.4vw,40px) 100px}
 body.g-planche .lis-nav{display:none}
@@ -194,9 +210,13 @@ body.tokn table.fib td:first-child{font-weight:600;color:var(--texte);font-size:
 body.tokn table.fib tr:nth-child(even) td{background:none}
 body.tokn .credits{padding:32px 0 0;font-size:13px;color:var(--texte-3);line-height:1.7;max-width:none}
 body.g-planche p.credits{font-size:13px;line-height:1.7;color:var(--texte-3);max-width:none;margin-top:48px}
+/* fond vivant : Planche = 3 orbes larges, plus présents (le collage est fait pour l'effet) */
+body.g-planche .orbes i{--o:.85}
+body.g-planche .syml div.sans{grid-template-columns:1fr}
 
 </style></head>
 <body class="tokn g-planche">
+<div class="orbes" aria-hidden="true"><i></i><i></i><i></i></div>
 <div class="lis-progres" aria-hidden="true"></div>
 <!--gabarit:planche-->
 <main>
@@ -245,5 +265,15 @@ if(pb)pb.style.width=(100*window.scrollY/H)+'%'}
 let raf=0;addEventListener('scroll',()=>{if(!raf)raf=requestAnimationFrame(()=>{raf=0;maj()})},{passive:true});
 addEventListener('resize',()=>{mesure();maj()});addEventListener('load',()=>{mesure();maj()});mesure();maj();})();
 </script>
+<script>
+/* Fond vivant : interrupteur « Fond fixe / Fond animé » (mémorisé), pause après 3 min sans geste ou onglet caché. */
+(function(){var b=document.body,K='tokn-fond',fixe=false;try{fixe=localStorage.getItem(K)==='fixe'}catch(e){}
+b.classList.toggle('fond-fixe',fixe);
+var t=document.createElement('button');t.className='fond-bouton';t.type='button';t.textContent=fixe?'Fond animé':'Fond fixe';
+t.onclick=function(){fixe=!fixe;b.classList.toggle('fond-fixe',fixe);t.textContent=fixe?'Fond animé':'Fond fixe';try{localStorage.setItem(K,fixe?'fixe':'anime')}catch(e){}};b.appendChild(t);
+var idle,pause=function(p){b.classList.toggle('fond-pause',p)},reveil=function(){pause(false);clearTimeout(idle);idle=setTimeout(function(){pause(true)},180000)};
+['pointermove','scroll','keydown','touchstart'].forEach(function(e){addEventListener(e,reveil,{passive:true})});reveil();
+document.addEventListener('visibilitychange',function(){pause(document.hidden)})})();
 
+</script>
 </body></html>
