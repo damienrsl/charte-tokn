@@ -1,0 +1,141 @@
+{
+ "contenu": "/Users/damienroussel/Documents/charte-tokn/v3/sac/contenu.json",
+ "mots_attendus": 190,
+ "formes": {
+  "recit": {
+   "couverture": 1.0,
+   "manquants": []
+  },
+  "planche": {
+   "couverture": 1.0,
+   "manquants": []
+  },
+  "conversation": {
+   "couverture": 1.0,
+   "manquants": []
+  },
+  "stories": {
+   "couverture": 1.0,
+   "manquants": []
+  },
+  "pellicule": {
+   "couverture": 1.0,
+   "manquants": []
+  }
+ },
+ "paires": [
+  {
+   "a": "recit",
+   "b": "planche",
+   "layout": 0.698,
+   "palette": 0.391,
+   "structure": 0.69,
+   "mode_emploi": 0.708,
+   "distance": 0.652,
+   "trop_proche": false,
+   "avis_visuel": 2
+  },
+  {
+   "a": "recit",
+   "b": "pellicule",
+   "layout": 0.589,
+   "palette": 0.386,
+   "structure": 0.733,
+   "mode_emploi": 1.0,
+   "distance": 0.677,
+   "trop_proche": false,
+   "avis_visuel": 3
+  },
+  {
+   "a": "recit",
+   "b": "stories",
+   "layout": 0.608,
+   "palette": 0.457,
+   "structure": 0.796,
+   "mode_emploi": 0.958,
+   "distance": 0.703,
+   "trop_proche": false,
+   "avis_visuel": 1
+  },
+  {
+   "a": "stories",
+   "b": "pellicule",
+   "layout": 0.617,
+   "palette": 0.425,
+   "structure": 0.8,
+   "mode_emploi": 1.0,
+   "distance": 0.711,
+   "trop_proche": false,
+   "avis_visuel": 4
+  },
+  {
+   "a": "recit",
+   "b": "conversation",
+   "layout": 0.666,
+   "palette": 0.318,
+   "structure": 0.833,
+   "mode_emploi": 0.95,
+   "distance": 0.712,
+   "trop_proche": false,
+   "avis_visuel": 3
+  },
+  {
+   "a": "planche",
+   "b": "pellicule",
+   "layout": 0.658,
+   "palette": 0.39,
+   "structure": 0.784,
+   "mode_emploi": 1.0,
+   "distance": 0.718,
+   "trop_proche": false,
+   "avis_visuel": 4
+  },
+  {
+   "a": "planche",
+   "b": "stories",
+   "layout": 0.646,
+   "palette": 0.507,
+   "structure": 0.815,
+   "mode_emploi": 0.964,
+   "distance": 0.731,
+   "trop_proche": false,
+   "avis_visuel": 3
+  },
+  {
+   "a": "conversation",
+   "b": "stories",
+   "layout": 0.668,
+   "palette": 0.515,
+   "structure": 0.885,
+   "mode_emploi": 0.958,
+   "distance": 0.757,
+   "trop_proche": false,
+   "avis_visuel": 5
+  },
+  {
+   "a": "conversation",
+   "b": "pellicule",
+   "layout": 0.697,
+   "palette": 0.401,
+   "structure": 0.88,
+   "mode_emploi": 1.0,
+   "distance": 0.759,
+   "trop_proche": false,
+   "avis_visuel": 2
+  },
+  {
+   "a": "planche",
+   "b": "conversation",
+   "layout": 0.744,
+   "palette": 0.364,
+   "structure": 0.875,
+   "mode_emploi": 0.958,
+   "distance": 0.763,
+   "trop_proche": false,
+   "avis_visuel": 3
+  }
+ ],
+ "seuil_proche": 0.45,
+ "ok_mots": true,
+ "ok_distance": true
+}
